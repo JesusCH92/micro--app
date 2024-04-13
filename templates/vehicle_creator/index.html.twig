@@ -4,15 +4,9 @@
 
 {% block body %}
 
-    <div class="example-wrapper">
-        <div class="container border__container padding__container mb-5">
-            <h1>Hello Creator</h1>
-        </div>
-
-        <div class="container border__container padding__container mb-5">
-            {{ include('vehicle_creator/_form.html.twig') }}
-        </div>
-
-        
+    <div class="container border__container padding__container mb-5">
+        <h2>Form Vehicle</h2>
+        {{ include('vehicle_creator/_form.html.twig') }}
     </div>
+
 {% endblock %}
