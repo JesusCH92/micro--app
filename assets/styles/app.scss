@@ -1,6 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~select2/dist/css/select2.css";
 
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
 :root {
     --primary-color: #4845D1;
     --secondary-color: #20D5C9;
@@ -16,6 +22,7 @@
 }
 
 body {
+    height: 100vh;
     background-color: var(--light-base-color);
 }
 
@@ -24,6 +31,7 @@ body {
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
     background-color: var(--white);
     border-color: rgba(223,225,229,0);
+    margin-top: 1rem;
 }
 
 .padding__container {
