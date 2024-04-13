@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">License</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for driver in drivers %}
+        <tr>
+            <th scope="row">{{ driver.id() }}</th>
+            <td>{{ driver.name().value() }}</td>
+            <td>{{ driver.surname().value() }}</td>
+            <td>{{ driver.license().value() }}</td>
+            <td>
+                <a href="{{ path('app_driver_deleter', {'id': driver.id()}) }}">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+<a href="{{ path('app_driver_creator') }}">Create</a>

@@ -1,0 +1,49 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+# VEHICLES
+app_vehicles:
+    path: /vehicles
+    controller: App\Vehicle\Infrastructure\Controller\VehiclesController::vehicles
+
+app_vehicle_deleter:
+    path: /vehicle-deleter/{id}
+    controller: App\Vehicle\Infrastructure\Controller\VehicleDeleterController::vehicleDeleter
+
+app_vehicle_creator:
+    path: /vehicle-creator
+    controller: App\Vehicle\Infrastructure\Controller\VehicleCreatorController::vehicleCreator
+
+app_api_vehicles_from_trip:
+    path: /api/vehicles-from-trip
+    controller: App\Vehicle\Infrastructure\Api\VehicleFromTripController::vehiclesFromTrip
+
+# DRIVERS
+app_drivers:
+    path: /drivers
+    controller: App\Driver\Infrastructure\Controller\DriversController::drivers
+
+app_driver_deleter:
+    path: /driver-deleter/{id}
+    controller: App\Driver\Infrastructure\Controller\DriverDeleterController::driverDeleter
+
+app_driver_creator:
+    path: /driver-creator
+    controller: App\Driver\Infrastructure\Controller\DriverCreatorController::driverCreator
+
+app_api_drivers_from_trip:
+    path: /api/drivers-from-trip
+    controller: App\Driver\Infrastructure\Api\DriveFromTripController::driversFromTrip
+
+# TRIPS
+app_trips:
+    path: /trips
+    controller: App\Trip\Infrastructure\Controller\TripsController::trips
+
+app_api_trip_creator:
+    path: /api/trip-creator
+    controller: App\Trip\Infrastructure\Api\TripCreatorController::tripCreator
+

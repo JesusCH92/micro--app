@@ -1,0 +1,20 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~select2/dist/css/select2.css";
+
+:root {
+    --primary-color: #4845D1;
+    --secondary-color: #20D5C9;
+    --dark-base-color: #edf0f5;
+    --light-base-color: #f0f2f5;
+    --primary-color-transparent-5: rgba(72, 69, 209, 0.5);
+    --primary-color-transparent-1: rgba(72, 69, 209, 0.1);
+    --white: #ffffff;
+    --grey: #cccccc;
+    --light-grey-hover: rgba(0, 0, 0, 0.05);
+    --container-border-color: rgba(223,225,229,0);
+    --soft-grey: #dddddd;
+}
+
+body {
+    background-color: var(--light-base-color);
+}

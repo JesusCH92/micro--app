@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trips{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+        <div class="container border__container padding__container mb-5">
+            <h1>Hello</h1>
+        </div>
+    </div>
+
+    <div class="container border__container padding__container mb-5">
+        {{ include('trips/_form.html.twig') }}
+    </div>
+
+    <div class="container border__container padding__container mb-5">
+        {{ include('trips/_table.html.twig') }}
+    </div>
+
+{% endblock %}

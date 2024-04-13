@@ -1,0 +1,33 @@
+{{ form_start(form, {attr: { novalidate: 'novalidate', class: 'mx-3', id: 'task__form' }}) }}
+
+<div class="row pt-2 pb-1">
+    <div class="form-group col-md-12">
+        <label class="form-label fw-bold">Brand:</label>
+        {{ form_widget(form.brand) }}
+        {{ form_errors(form.brand) }}
+    </div>
+
+    <div class="form-group col-md-12">
+        <label class="form-label fw-bold">Model:</label>
+        {{ form_widget(form.model) }}
+        {{ form_errors(form.model) }}
+    </div>
+
+    <div class="form-group col-md-12">
+        <label class="form-label fw-bold">Plate:</label>
+        {{ form_widget(form.plate) }}
+        {{ form_errors(form.plate) }}
+    </div>
+
+    <div class="form-group col-md-12">
+        <label class="form-label fw-bold">License Required:</label>
+        {{ form_widget(form.licenseRequired) }}
+        {{ form_errors(form.licenseRequired) }}
+    </div>
+</div>
+
+<div class="btn-toolbar justify-content-end mt-4">
+    <button type="submit" class="form-control btn btn-primary">Create</button>
+</div>
+
+{{ form_end(form) }}
