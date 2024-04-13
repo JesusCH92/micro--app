@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Driver\ApplicationService;
 
 use App\Driver\Domain\Entity\Driver;
+use App\Driver\Domain\Exception\DriverIsNotDeletable;
 use App\Driver\Domain\Exception\NotFoundDriver;
 use App\Driver\Domain\Repository\DriverRepository;
 
@@ -18,6 +19,8 @@ final class DriverDeleter
     {
         $driver = $this->findDriverOrFail($driverId);
 
+        $this->failIfIsNotDeletable($driver);
+
         $this->repository->delete($driver);
     }
 
@@ -30,5 +33,12 @@ final class DriverDeleter
         }
 
         return $driver;
+    }
+
+    private function failIfIsNotDeletable(Driver $driver): void
+    {
+        if (!$driver->isDeletable()) {
+            throw new DriverIsNotDeletable('Driver has trips and cannot be removed');
+        }
     }
 }
