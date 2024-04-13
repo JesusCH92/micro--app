@@ -14,10 +14,12 @@ final class DriverCreator
     {
     }
 
-    public function __invoke(DriverCreatorRequest $request): void
+    public function __invoke(DriverCreatorRequest $request): Driver
     {
         $driver = new Driver($request->name, $request->surname, $request->license);
 
         $this->repository->save($driver);
+
+        return $driver;
     }
 }
