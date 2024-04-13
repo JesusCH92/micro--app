@@ -20,6 +20,7 @@ app_vehicle_creator:
 app_api_vehicles_from_trip:
     path: /api/vehicles-from-trip
     controller: App\Vehicle\Infrastructure\Api\VehicleFromTripController::vehiclesFromTrip
+    methods: [ GET ]
 
 # DRIVERS
 app_drivers:
@@ -37,6 +38,7 @@ app_driver_creator:
 app_api_drivers_from_trip:
     path: /api/drivers-from-trip
     controller: App\Driver\Infrastructure\Api\DriveFromTripController::driversFromTrip
+    methods: [ GET ]
 
 # TRIPS
 app_trips:
@@ -46,4 +48,5 @@ app_trips:
 app_api_trip_creator:
     path: /api/trip-creator
     controller: App\Trip\Infrastructure\Api\TripCreatorController::tripCreator
+    methods: [ POST ]
 
