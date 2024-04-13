@@ -57,7 +57,7 @@ const tripController = (function ({model}) {
                 driver: +driverSelect.value
             }
 
-            model.tripCreator({data, container: ''});
+            model.tripCreator({data, selector: dateInput});
         });
     };
 

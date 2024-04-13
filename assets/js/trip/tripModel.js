@@ -1,5 +1,5 @@
 const tripModel = (function () {
-    const create = function ({data, container}) {
+    const create = function ({data, selector}) {
         const url = '/api/trip-creator';
 
         const options = {
@@ -19,11 +19,17 @@ const tripModel = (function () {
             })
             .then(data => {
                 console.log('Response:', data);
-                _renderRowInTable({trip: data})
+                _renderRowInTable({trip: data});
+                _resetMainInput({mainInput: selector});
             })
             .catch(error => {
                 console.error('There was a problem with your fetch operation:', error);
             });
+    };
+
+    const _resetMainInput = function ({mainInput}) {
+        mainInput.value = ''; // reiniciamos el formulario
+        mainInput.dispatchEvent(new Event('change'));
     };
 
     const _renderRowInTable = function ({trip}) {
