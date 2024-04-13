@@ -40,9 +40,13 @@ const tripModel = (function () {
         const driverCell = document.createElement('td');
         driverCell.textContent = trip.driver;
 
+        const dateCell = document.createElement('td');
+        dateCell.textContent = trip.date;
+
         newRow.appendChild(idCell);
         newRow.appendChild(vehicleCell);
         newRow.appendChild(driverCell);
+        newRow.appendChild(dateCell);
 
         tbody.appendChild(newRow);
     };

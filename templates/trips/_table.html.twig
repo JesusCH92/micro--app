@@ -4,6 +4,7 @@
         <th scope="col">#</th>
         <th scope="col">Vehicle</th>
         <th scope="col">Driver</th>
+        <th scope="col">Date</th>
     </tr>
     </thead>
     <tbody>
@@ -13,6 +14,7 @@
             <th scope="row">{{ trip.id() }}</th>
             <td>{{ trip.vehicle().description() }}</td>
             <td>{{ trip.driver().description() }}</td>
+            <td>{{ trip.date()|date('d/m/Y') }}</td>
         </tr>
     {% endfor %}
 
