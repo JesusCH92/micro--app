@@ -19,7 +19,10 @@
             <td>{{ vehicle.plate().value() }}</td>
             <td>{{ vehicle.licenseRequired().value() }}</td>
             <td>
-                <a href="{{ path('app_vehicle_deleter', {'id': vehicle.id()}) }}">Delete</a>
+                {% if vehicle.isDeletable() %}
+                    <a href="{{ path('app_vehicle_deleter', {'id': vehicle.id()}) }}">Delete</a>
+                {% else %}
+                {% endif %}
             </td>
         </tr>
     {% endfor %}
