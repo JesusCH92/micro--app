@@ -19,8 +19,12 @@ install:
 
 ##	deploy:							deploying app
 deploy:
-	-@$(MAKE) start | true
-	-@$(MAKE) install | true
+	-docker network create app-network | true
+	-@docker exec -it php-fpm composer install
+	-@docker exec -it php-fpm npm install
+	-@docker exec -it php-fpm npm run dev
+	-@docker exec -it php-fpm php bin/console doctrine:migrations:migrate --no-interaction
+	-@docker exec -it php-fpm php bin/phpunit --testdox
 
 ##	install-in-container:			instalamos lo que necesita el proyecto
 install-in-container:
