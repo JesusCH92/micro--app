@@ -20,6 +20,7 @@ install:
 ##	deploy:							deploying app
 deploy:
 	-docker network create app-network | true
+	-docker-compose -p micro-app up -d
 	-@docker exec -it php-fpm composer install
 	-@docker exec -it php-fpm npm install
 	-@docker exec -it php-fpm npm run dev
