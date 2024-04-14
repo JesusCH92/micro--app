@@ -26,7 +26,7 @@ docker network create app-network
 - [ ] Levantar los contenedores:
 
 ```shell
-docker-compose -p app up -d
+docker-compose -p micro-app up -d
 ```
 
 - [ ] Modo interactivo: acceso al contenedor de PHP:
