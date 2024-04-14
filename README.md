@@ -29,13 +29,13 @@ docker network create app-network
 docker-compose -p micro-app up -d
 ```
 
-- [ ] Modo interactivo: acceso al contenedor de PHP:
+- [ ] Modo interactivo: acceso al contenedor de PHP(php-fpm):
 
 ```shell
 docker exec -it php-fpm bash 
 ```
 
-- [ ] Después de entrar al contenedor de php-fpm, dentro del contenedor ejecutar:
+- [ ] Después de entrar al contenedor de PHP(php-fpm), ver el paso anterior, dentro del contenedor ejecutar:
 
 ```shell
 make install-in-container
