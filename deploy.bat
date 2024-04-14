@@ -8,7 +8,7 @@ IF %ERRORLEVEL% NEQ 0 (
 )
 
 REM Levantar los contenedores
-docker-compose -p app up -d
+docker-compose -p micro-app up -d
 
 REM Instalar las dependencias dentro del contenedor PHP
 docker exec -it php-fpm composer install
