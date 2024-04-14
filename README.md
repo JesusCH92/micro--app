@@ -7,6 +7,12 @@ La estructura de carpetas está basada en una arquitectura de cortes verticales,
 > [!IMPORTANT]
 > **Debes tener instalado Docker y Docker Compose en tu equipo.**
 
+> [!WARNING]
+> **Estamos usando el puerto 8080 para el servidor local, y tiene que estar disponible para levantar nuestro servicio de nginx.**
+> 
+> **Estamos usando el puerto 3306 de mysql y debe estar disponible, si tiene un servidor en mysql encendido apaguelo para levantar la app.**
+
+
 ## Desplegar en: MAC, Linux, WSL2
 
 - [ ] Debes ejecutar:
