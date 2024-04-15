@@ -30,6 +30,8 @@ final class TripCreator
         $driver = $this->findDriverOrFail($request->getDriver());
         $date = $this->failIfIsNull($request->getDate());
 
+        //TODO: falta implementar la logica de negocio que VALIDA que trip pueda ser creado
+
         $trip = new Trip($vehicle, $driver, $date);
 
         $this->repository->save($trip);
