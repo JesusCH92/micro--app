@@ -117,4 +117,62 @@ class TripCreatorTest extends TestCase
             [new DateTimeImmutable('2024-05-04'), 97531, 35792]
         ];
     }
+
+    /**
+     * @test
+     */
+    public function throwExceptionWhenDateIsNull()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $service = new TripCreator(new DummyTripRepository(), new StubVehicleRepository(), new StubDriverRepository());
+
+        $request = new TripCreatorRequest();
+        $request->setDriver(12345);
+        $request->setVehicle(54321);
+        $request->setDate(null);
+
+        $service($request);
+    }
+
+    /**
+     * @test
+     * @group performance
+     * @dataProvider largeDataSetProvider
+     */
+    public function performanceTestWithLargeDataSet(DateTimeImmutable $date, int $vehicle, int $driver)
+    {
+        // Measure the execution time for creating a trip with a large data set
+        $startTime = microtime(true);
+
+        $service = new TripCreator(new DummyTripRepository(), new StubVehicleRepository(), new StubDriverRepository());
+
+        $request = new TripCreatorRequest();
+        $request->setDriver($driver);
+        $request->setVehicle($vehicle);
+        $request->setDate($date);
+
+        $service($request);
+
+        $executionTime = microtime(true) - $startTime;
+        $this->assertLessThan(0.1, $executionTime); // Assert that execution time is within acceptable limits
+    }
+
+    public function largeDataSetProvider(): array
+    {
+        $data = [];
+
+        for ($i = 0; $i < 1000; $i++) {
+            $date = new DateTimeImmutable(
+                rand(2000, 2030) . '-' . rand(1, 12) . '-' . rand(1, 28)
+            );
+
+            $vehicleId = rand(1, 100_000);
+            $driverId = rand(1, 100_000);
+
+            $data[] = [$date, $vehicleId, $driverId];
+        }
+
+        return $data;
+    }
 }
