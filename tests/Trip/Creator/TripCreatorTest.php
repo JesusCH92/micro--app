@@ -142,7 +142,6 @@ class TripCreatorTest extends TestCase
      */
     public function performanceTestWithLargeDataSet(DateTimeImmutable $date, int $vehicle, int $driver)
     {
-        // Measure the execution time for creating a trip with a large data set
         $startTime = microtime(true);
 
         $service = new TripCreator(new DummyTripRepository(), new StubVehicleRepository(), new StubDriverRepository());
@@ -155,7 +154,7 @@ class TripCreatorTest extends TestCase
         $service($request);
 
         $executionTime = microtime(true) - $startTime;
-        $this->assertLessThan(0.1, $executionTime); // Assert that execution time is within acceptable limits
+        $this->assertLessThan(0.1, $executionTime);
     }
 
     public function largeDataSetProvider(): array

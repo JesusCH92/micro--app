@@ -47,6 +47,12 @@ docker exec -it php-fpm bash
 make install-in-container
 ```
 
+- [ ] Opcional, desde el contenedor de PHP(php-fpm), se puede ejecutar los test:
+
+```shell
+php bin/phpunit --testdox
+```
+
 ## Acceso al sistema
 
 - [ ] Después de desplegar el proyecto correctamente, debe acceder al siguiente enlace:
