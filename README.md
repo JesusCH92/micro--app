@@ -1,5 +1,5 @@
 # MICRO APP
-Stack tecnológico: PHP8.3(Symfony7), Nginx, MySQL, Webpack y Docker.
+Stack tecnológico: PHP8.3(Symfony7), Swagger, Nginx, MySQL, Webpack y Docker.
 
 La estructura de carpetas está basada en una arquitectura de cortes verticales, mientras que la app se ha trabajado con una arquitectura hexagonal.
 
